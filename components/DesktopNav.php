@@ -10,7 +10,7 @@
         <div class="aside-container flex flex-col items-start justify-between ">
         <div class="aside mt-8">
             <!-- write a javascript for if bg-black contains class then remove hover of that element -->
-            <a href="#" class="flex items-center gap-4 text-white bg-black rounded-lg py-3 px-8">
+            <a href="index.php" class="flex items-center gap-4 text-white bg-black rounded-lg py-3 px-8">
                 <i data-feather="home"></i>
                 <p class="capitalize">home</p>
             </a>
@@ -38,10 +38,10 @@
             echo '
             <!-- logout -->
             <!-- if user not signed in then replace this logout to sign in using php session -->
-            <div class="userStatus login cursor-pointer flex items-center gap-4 rounded-lg py-3 px-8 mt-5 hover:bg-slate-50">
+            <a href="logout.php" class="userStatus login cursor-pointer flex items-center gap-4 rounded-lg py-3 px-8 mt-5 hover:bg-slate-50">
                 <i data-feather="log-out"></i>
                 <p class="capitalize">log out</p>
-            </div>';
+            </a>';
         }
         else
         echo '

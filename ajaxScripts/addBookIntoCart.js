@@ -19,9 +19,8 @@ buyButton.forEach((buy=>{
                     document.querySelector('body').removeChild(document.querySelector('.success-msg'));
                 },4000);
          }
-        else
-            window.location.href= "https://localhost/bookstore/auth/signin.php";
-    });
+       
+        });
 
 }))
 // console.log(id,bkName)

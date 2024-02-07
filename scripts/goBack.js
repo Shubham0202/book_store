@@ -5,4 +5,5 @@ goBack.addEventListener('click',()=>{
     window.location.href="http://localhost/bookstore/"; //original
     else
     history.back();
+console.log(history)
 })

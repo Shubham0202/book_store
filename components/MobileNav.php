@@ -15,7 +15,7 @@
         <div class="desktop-aside w-60 h-[calc(100dvh)] flex flex-col items-start justify-between">
             <div class="aside mt-8 w-full">
                 <!-- write a javascript for if bg-black contains class then remove hover of that element -->
-                <a href="#" class="block cursor-default flex items-center gap-4 text-white bg-black rounded-lg py-3 px-4">
+                <a href="index.php" class="block cursor-default flex items-center gap-4 text-white bg-black rounded-lg py-3 px-4">
                     <i data-feather="home"></i>
                     <p class="capitalize">home</p>
                 </a>

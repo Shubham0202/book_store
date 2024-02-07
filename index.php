@@ -109,13 +109,13 @@ include 'isLoggedIn.php';
         <h2 class="text-lg font-semibold uppercase">classic</h2>
         <a href="#see-all" class="cursor-default sm:cursor-pointer capitalize px-6 py-1 bg-white hover:bg-neutral-100 transition rounded-md">see all</a>
         </div>
-        <div class="flex relative overflow-hidden">
+        <div class="flex relative overflow-hidden xl:overflow-x-scroll">
             <div class="absolute top-0 left-0 w-10 h-full shadow rounded grid place-items-center lg:hidden z-10">
                 <img class="arrow-left bg-black rounded-full" src="assets/icons/arrow-left-s-line.svg" alt="">
             </div>
             <div class="slider-imges flex flex-nowrap gap-4 pl-14 scrollbar-hidden transition-all">
                 <?php
-                     $sql = "SELECT * FROM `books` LIMIT 10";
+                     $sql = "SELECT * FROM `books`  ORDER BY `books`.`id` DESC LIMIT 10";
                      $result = mysqli_query($conn,$sql);
                      if($result)
                      {
@@ -162,7 +162,7 @@ include 'isLoggedIn.php';
     <div class="books-section custom-grid">
         <!--design 1  -->
         <?php
-            $sql = "SELECT * FROM `books` ";
+            $sql = "SELECT * FROM `books` ORDER BY `books`.`id` DESC";
             
             $result = mysqli_query($conn,$sql);
             if($result)

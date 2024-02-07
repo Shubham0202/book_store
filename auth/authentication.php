@@ -5,6 +5,7 @@ include '../components/warning.php';
 if (isset($_POST['register'])) {
 
     $image = $_FILES['profile-pic'];
+    print_r($image);
     $fName = $_POST['f-name'];
     $email = $_POST['email'];
     $password = $_POST['pwd'];

@@ -30,18 +30,22 @@ include 'components/ShoppingCart.php';
     <!-- main -->
     <div class=" book-info mx-4 lg:h-screen lg:overflow-y-scroll lg:w-full scrollbar-hidden">
        <!-- search bar -->
-        <div class="search-container py-4 flex items-center justify-between">
-            <!-- onclick replace hidden class and flex -->
+       <div class="search-container py-4 flex items-center justify-between">
+        <form action="search.php" method="get">
             <div id="search-bar" class="hidden lg:flex items-center bg-white w-fit rounded-lg shadow">
-                <input class=" placeholder:capitalize px-4 py-2 bg-transparent outline-none sm:w-96 w-[77vw] capitalize" type="text" placeholder="search book">
-                <div class="p-3 sm:cursor-pointer cursor-default">
+            <input name="s" class=" placeholder:capitalize px-4 py-2 bg-transparent outline-none sm:w-96 w-[77vw] capitalize" type="text" placeholder="search book">
+                <button type="submit" class="p-3 sm:cursor-pointer cursor-default">
                     <i data-feather="search"></i>
-                </div>
+                </button>
+
             </div>
-            <div class="hidden md:block">
-                <?php ShoppingCart(); ?>
-            </div>
+        </form>
+        <div class="hidden md:block">
+            <?php ShoppingCart(); ?>
         </div>
+    </div>
+        
+
         <div class="flex flex-col p-4 mb-4 shadow bg-white rounded lg:flex-row lg:gap-4">
             <div class="lg:hidden flex items-end justify-between mb-2 ">
                 <p></p>
@@ -84,9 +88,19 @@ include 'components/ShoppingCart.php';
                         </div>
                     </div>
                     <!-- buy & add to favourite  for desktop-->
-                    <div class="hidden mt-4 lg:block ">
-                        <a href="#" class="buyButton block capitalize px-7 py-3 bg-black text-white shadow rounded-md mb-3 w-60 hover:bg-gray-800 transition">buy now</a>
-                        <a href="#" class="block capitalize px-6 py-3 bg-transparent rounded-md flex items-center gap-1 border-2 mb-3 w-60 hover:bg-gray-50"><i data-feather="heart"></i> favourite</a>
+                    <div class="hidden mt-4 lg:block ">';
+
+                     
+                    if(isset($_COOKIE['userId']))
+                    {
+                        if(isloggedIn())
+                            echo '<div class="buyButton block cursor-default focus:scale-90 transition-all capitalize px-10 py-3 bg-black text-white shadow rounded-md">buy now</div>';
+                    }
+                    else
+                        echo '<a href="auth/signin.php" class="buyButton block cursor-default focus:scale-90 transition-all capitalize px-10 py-3 bg-black text-white shadow rounded-md">buy now</a>';
+                    
+                       
+                    echo' <a href="#" class="block capitalize px-6 py-3 bg-transparent rounded-md flex items-center gap-1 border-2 mb-3 w-60 hover:bg-gray-50"><i data-feather="heart"></i> favourite</a>
                         <div class="flex items-center gap-4">
                             <p class="cursor-pointer capitalize px-7 py-3 shadow rounded-md w-fit hover:bg-gray-50 transition"><i data-feather="share-2"></i></p>
                             <a href="#" class="block capitalize px-7 py-3 shadow rounded-md w-fit hover:bg-gray-50 transition"><i data-feather="shopping-cart"></i></a>
@@ -176,7 +190,15 @@ include 'components/ShoppingCart.php';
     <div class="flex items-center justify-center gap-2 py-3 mt-4 sticky bottom-0 bg-white lg:hidden">
         <?php ShoppingCart(); ?>
         <a href="#" class="block cursor-default focus:scale-90 hover:border-black transition-all capitalize px-5 py-2 bg-transparent rounded-md flex items-center border-2"><i class="mr-1" data-feather="heart"></i> favourite</a>
-        <a href="#" class="buyButton block cursor-default focus:scale-90 transition-all capitalize px-10 py-3 bg-black text-white shadow rounded-md">buy</a>
+        <?php 
+        if(isset($_COOKIE['userId']))
+        {
+            if(isloggedIn())
+                echo '<div class="buyButton block cursor-default focus:scale-90 transition-all capitalize px-10 py-3 bg-black text-white shadow rounded-md">buy</div>';
+        }
+        else
+            echo '<a href="auth/signin.php" class="buyButton block cursor-default focus:scale-90 transition-all capitalize px-10 py-3 bg-black text-white shadow rounded-md">buy</a>';
+        ?>
     </div>
     </div>
 </body>

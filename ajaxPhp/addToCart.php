@@ -13,7 +13,7 @@ if(isset($_POST['id']))
         $row1 = mysqli_fetch_array($result1);
         // book is not exists
         $userCartCount = $row1['count'];
-        //  echo $userCartCount;
+         echo $userCartCount;
         if($userCartCount<1)
         {
             
