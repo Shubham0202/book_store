@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2024 at 05:47 PM
+-- Generation Time: Feb 07, 2024 at 11:46 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -51,7 +51,16 @@ INSERT INTO `authentication` (`id`, `userId`, `browser`, `isLoggedIn`, `LogTime`
 (9, 11, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0', 1, '2024-02-02 14:20:59'),
 (10, 11, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0', 1, '2024-02-02 14:27:28'),
 (11, 11, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0', 1, '2024-02-03 04:19:44'),
-(12, 11, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0', 1, '2024-02-03 10:28:21');
+(12, 11, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0', 1, '2024-02-03 10:28:21'),
+(13, 10, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0', 1, '2024-02-07 04:06:24'),
+(14, 12, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0', 0, '2024-02-07 09:24:21'),
+(15, 12, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0', 0, '2024-02-07 09:24:21'),
+(16, 12, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0', 0, '2024-02-07 09:24:21'),
+(17, 12, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0', 0, '2024-02-07 09:24:21'),
+(18, 12, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0', 0, '2024-02-07 09:24:21'),
+(19, 12, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0', 0, '2024-02-07 10:21:48'),
+(20, 12, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0', 0, '2024-02-07 10:21:48'),
+(21, 12, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0', 1, '2024-02-07 10:22:17');
 
 -- --------------------------------------------------------
 
@@ -103,7 +112,8 @@ INSERT INTO `books` (`id`, `title`, `description`, `language`, `publication_date
 (6, 'guarav kumbhar', '', 'marathi', '2024-01-30', 1, 100000000000, 'assets/bookImages/guarav kumbhar.jpg', 2, 'Available', 23, 'romance', '2024-02-01 03:58:23'),
 (7, 'iron', '', 'hindi,english', '2024-02-02', 1, 499, 'assets/bookImages/iron.jpg', 1, 'Available', 23, 'fantacy', '2024-02-01 04:35:40'),
 (8, 'bhagwatgeeta', '', 'hindi,english', '2024-02-04', 1, 1, 'assets/bookImages/bhagwatgeeta.jpg', 1, 'Available', 100, 'adveture', '2024-02-04 13:04:04'),
-(9, 'bhagwatgeeta', '', 'hindi,english', '2024-02-04', 1, 1, 'assets/bookImages/bhagwatgeeta.jpg', 1, 'Available', 100, 'adveture', '2024-02-04 13:04:50');
+(9, 'bhagwatgeeta', '', 'hindi,english', '2024-02-04', 1, 1, 'assets/bookImages/bhagwatgeeta.jpg', 1, 'Available', 100, 'adveture', '2024-02-04 13:04:50'),
+(10, 'painting cats', 'In this follow-up to her hit Painting Happiness, Instagram sensation Terry Runyan shows you how to play with watercolour to create quirky cat portraits – and let go of stress. Perfect for cat lovers and watercolour artists of all skill levels, from absolute beginner to more experienced, Painting Cats teaches you how to go from blob of paint to a beautiful portrait of your fluffy friends. Drawing on art therapy techniques that emphasize fun and freedom in creativity over technical perfection, Runyan guides you step by step through the process of adding details to loosely painted shapes to create your own unique and distinct cats! ', 'english', '2024-02-07', 1, 99, 'assets/bookImages/painting cats.webp', 1, 'Available', 100, 'adventure', '2024-02-07 09:32:34');
 
 -- --------------------------------------------------------
 
@@ -126,7 +136,8 @@ CREATE TABLE `cart` (
 
 INSERT INTO `cart` (`id`, `user_id`, `book_id`, `quantity`, `total_price`, `discount`) VALUES
 (53, 8, 7, 15, 7485, 0),
-(55, 11, 7, 1, 499, 0);
+(55, 11, 7, 1, 499, 0),
+(59, 12, 10, 1, 99, 0);
 
 -- --------------------------------------------------------
 
@@ -232,7 +243,8 @@ INSERT INTO `users` (`id`, `name`, `profile_pic`, `email`, `password`, `dob`, `a
 (8, 'Shubh', 'assets/avtar/1Shubh.jpg', 'shubham826852@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$eXBKY29hMkZ2LklTZlBVNw$rTitQglEy2xQM2uibBJC3HLIOMU7h5/1YUaFFaDslTI', '2003-08-03', 'India', 'India', 0, 'admin', '2024-01-24 12:37:39'),
 (9, 'Shubh', 'assets/avtar/9Shubh.jpg', 'shubham826852@gmail.comm', '$argon2id$v=19$m=65536,t=4,p=1$a1V4R01YVmlWWWd5YWFqZA$4Gsk4gR/eoZRQ+BneZ70uOnejs9OyEEcdB78MENkvKc', '0000-00-00', '', '', 0, 'normal', '2024-01-24 12:33:48'),
 (10, 'Shubh', 'assets/avtar/10Shubh.jpg', 'shubham826852@gmail.commm', '$argon2id$v=19$m=65536,t=4,p=1$cGIuLmhzVlBmbjN0QTkxOQ$QCMNGxkX9uvlgqx26s1e12F5O/fIH1D6l0aCWFJs3sY', '2024-01-24', '', '', 0, 'normal', '2024-01-24 12:35:24'),
-(11, 'GAURAV', 'assets/avtar/11GAURAV.webp', 'gaurav@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$aFl1MVFiSXBiYi9nMnJ1eQ$QrZUats+G88ae1Q7zyiTe2rAJaeFtQ12I0M5VKwcTG4', '2024-02-02', '', '', 0, 'normal', '2024-02-01 04:05:44');
+(11, 'GAURAV', 'assets/avtar/11GAURAV.webp', 'gaurav@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$aFl1MVFiSXBiYi9nMnJ1eQ$QrZUats+G88ae1Q7zyiTe2rAJaeFtQ12I0M5VKwcTG4', '2024-02-02', '', '', 0, 'normal', '2024-02-01 04:05:44'),
+(12, 'kr', 'assets/avtar/12kr.jpg', 'Kr@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$QVRhZ2hzOHBuZjY2T0JFSA$CEACof/akjeKhJPR5YyJJ2C5S4NxLyk/mHM+G+PGdcQ', '2024-02-07', '', '', 0, 'normal', '2024-02-07 04:16:54');
 
 --
 -- Indexes for dumped tables
@@ -309,7 +321,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `authentication`
 --
 ALTER TABLE `authentication`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `author`
@@ -321,13 +333,13 @@ ALTER TABLE `author`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `country`
@@ -357,7 +369,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
