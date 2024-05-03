@@ -18,19 +18,19 @@ git clone https://github.com/Shubham0202/book_store.git
 
 2. **Import the Database**:
 
-   - Create a MySQL database and import the `database.sql` file located in the `database` directory.
+   - Create a MySQL database and import the `database.sql`.
 
 3. **Configure Database Connection**:
 
-   - Update the `config.php` file located in the `includes` directory with your database credentials.
+   - Update the `connect.php` file located in the `root` directory with your database credentials.
 
 4. **Start the Server**:
 
-   - Start a PHP server (e.g., using XAMPP, WAMP, or MAMP).
+   - Start a PHP server (e.g., using XAMPP).
 
 5. **Access the Application**:
 
-   - Open a web browser and navigate to `http://localhost/bookstore-project`.
+   - Open a web browser and navigate to `http://localhost/book_store`.
 
 ## Usage
 
