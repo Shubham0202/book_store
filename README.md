@@ -18,7 +18,7 @@ git clone https://github.com/Shubham0202/book_store.git
 
 2. **Import the Database**:
 
-   - Create a MySQL database and import the `database.sql`.
+   - Create a MySQL database and import the `bookstore.sql`.
 
 3. **Configure Database Connection**:
 
